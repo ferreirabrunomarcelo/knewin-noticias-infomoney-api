@@ -77,7 +77,7 @@ public class NoticiaService {
 
             noticia = new Noticia(url, titulo.text(), subtitulo.text(), autor.text(), formatarData(data), paragrafos);
 
-        } catch (IOException e) {
+        } catch (IOException | NullPointerException e) {
             throw new URLInvalidaException("A URL informada não é corresponde a uma notícia do Infomoney.");
         }
         return noticia;
